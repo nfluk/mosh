@@ -2,7 +2,7 @@
 
 function createBall(radius) {
   return {
-    radius, // same as "radius: radius" - if key & value are the same name no need to add value
+    radius, // same as "radius: radius" - if key & value are the same name no need to add value.
     draw() {
       console.log(`drawing of ball with radius ${radius}`);
     },
