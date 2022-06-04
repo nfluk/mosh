@@ -1,6 +1,12 @@
 const express = require('express');
 const app = express();
 
+const courses = [
+  { id: 1, name: 'JavaScript' },
+  { id: 2, name: 'Ruby' },
+  { id: 3, name: 'Python' },
+];
+
 app.get('/', (req, res) => {
   // the cb in a get request is also called a 'route handler'
   res.send('Hello World!');
@@ -11,7 +17,7 @@ app.get('/api/courses', (req, res) => {
 });
 
 app.get('/api/courses/:id', (req, res) => {
-  res.send(req.params.id);
+  res.send(req.query);
 });
 
 // PORT
