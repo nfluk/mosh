@@ -9,15 +9,27 @@ const courses = [
 
 app.get('/', (req, res) => {
   // the cb in a get request is also called a 'route handler'
-  res.send('Hello World!');
+  res.status(200).send('Hello World!');
 });
 
 app.get('/api/courses', (req, res) => {
-  res.send([1, 2, 3]);
+  res.status(200).send(courses);
 });
 
 app.get('/api/courses/:id', (req, res) => {
-  res.send(req.query);
+  const course = courses.find(
+    (course) => course.id === parseInt(req.params.id)
+  );
+  if (!course) {
+    res.status(404).send('Page not found');
+  }
+  res.status(200).send(course);
+});
+
+app.post('/api/courses', (req, res) => {
+  const course = {
+    id: courses.length + 1,
+  };
 });
 
 // PORT
