@@ -2,17 +2,14 @@
 
 const sum = (limit) => {
   let sum = 0;
-  let sumMultipleFive = 0;
 
   for (let i = 0; i <= limit; i++) {
-    if (i % 3 === 0) {
-      sumMultipleThree += i;
-    } else if (i % 5 === 0) {
-      sumMultipleFive += i;
+    if (i % 3 === 0 || i % 5 === 0) {
+      sum += i;
     }
   }
 
-  return sumMultipleThree + sumMultipleFive;
+  return sum;
 };
 
 console.log(sum(10));
