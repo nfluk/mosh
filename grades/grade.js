@@ -7,9 +7,13 @@
 
 const grades = [80, 80, 50];
 
-const calculateGrades = (array) => {
+const calculateAverage = (array) => {
   const mySum = array.reduce((sum, value) => sum + value, 0);
-  const meanGrade = mySum / grades.length;
+  return (meanGrade = mySum / grades.length);
+};
+
+const calculateGrades = (array) => {
+  calculateAverage(array);
 
   if (meanGrade <= 59) return 'Your grade is: F';
   if (meanGrade <= 69) return 'Your grade is: D';
